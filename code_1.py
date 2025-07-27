@@ -53,7 +53,7 @@ def calculate(user_input):
 def main():
     print("Welcome to the calculator!")
     while True:
-        user_input = input("Enter calculation (or type 'history' to view history, 'clear' to clear history, or 'exit' to quit): ")
+        user_input = input("Enter calculation(+,-,/,*) (or type 'history' to view history, 'clear' to clear history, or 'exit' to quit): ")
         if user_input == 'exit':
             print("Exiting the calculator. Goodbye!")
             break
