@@ -1,25 +1,28 @@
 HISTORY_FILE = "history.txt"
 
 def show_history():
+    # Open the history file in read mode to fetch previous entries
     file = open(HISTORY_FILE, "r")
     lines = file.readlines()
     if len(lines) == 0:
         print("No history available.")
-
     else:
+        # Print each line in reverse order so the most recent history appears first
         for line in reversed(lines):
             print(line.strip())
-    file.close()
+    file.close()  # Ensure the file is closed after reading
 
 def clear_history():
+    # Open the history file in write mode to clear its content
     file = open(HISTORY_FILE, "w")
-    file.write("")  # Clear the file by writing an empty string
-    file.close()
+    file.write("")  # Write an empty string to clear file content
+    file.close()  # Close the file after clearing
 
 def save_to_history(equation, result):
+    # Open the history file in append mode to add a new calculation record
     file = open(HISTORY_FILE, "a")
     file.write(equation + " = " + str(result) + "\n")
-    file.close()
+    file.close()  # Close the file after writing the new record
 
 def calculate(user_input):
     parts = user_input.split()
